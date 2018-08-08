@@ -1,6 +1,8 @@
 ## PENDING
 
 BREAKING CHANGES
+* API
+  - \#1880 [x/stake] changed the endpoints to be more REST-ful
 * Update to tendermint v0.22.5. This involves changing all of the cryptography imports. [Ref](https://github.com/tendermint/tendermint/pull/1966)
 * [baseapp] Msgs are no longer run on CheckTx, removed `ctx.IsCheckTx()`
 * [x/gov] CLI flag changed from `proposalID` to `proposal-id`
@@ -46,6 +48,7 @@ FEATURES
 * [cli] added `gov query-proposals` command to CLI. Can filter by `depositer`, `voter`, and `status`
 * [core] added BaseApp.Seal - ability to seal baseapp parameters once they've been set
 * [querier] added custom querier functionality, so ABCI query requests can be handled by keepers
+* [gov] added TallyResult type that gets added stored in Proposal after tallying is finished
 
 IMPROVEMENTS
 * [baseapp] Allow any alphanumeric character in route
@@ -53,6 +56,7 @@ IMPROVEMENTS
 * [tools] Remove `rm -rf vendor/` from `make get_vendor_deps`
 * [x/auth] Recover ErrorOutOfGas panic in order to set sdk.Result attributes correctly
 * [x/stake] Add revoked to human-readable validator 
+* [spec] \#967 Inflation and distribution specs drastically improved
 * [tests] Add tests to example apps in docs
 * [x/gov] Votes on a proposal can now be queried
 * [x/bank] Unit tests are now table-driven
